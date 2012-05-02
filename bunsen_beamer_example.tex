@@ -1,0 +1,131 @@
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 3.
+%
+% Seth Brown, Ph.D.
+% sethbrown@drbunsen.org
+%
+% Compiled with XeLaTeX
+% Dependencies:
+%   Fontin Sans font (http://www.exljbris.com/fontinsans.html)
+%
+\documentclass{beamer}
+
+\usepackage{graphicx} % graphics
+\usepackage{epsfig} % eps graphics
+\usepackage{hyperref} % urls
+\usepackage{booktabs, caption} % table styling
+
+% suppress navigation bar
+\beamertemplatenavigationsymbolsempty
+
+\mode<presentation>
+{
+  \usetheme{bunsen}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{items}[circle]
+}
+
+% set fonts
+\usepackage{fontspec}
+\setsansfont{Fontin Sans}
+\setbeamerfont{frametitle}{size=\LARGE,series=\bfseries}
+
+% color definitions
+\usepackage{color}
+\definecolor{uipoppy}{RGB}{225, 64, 5}
+\definecolor{uipaleblue}{RGB}{96,123,139}
+\definecolor{uiblack}{RGB}{0, 0, 0}
+
+% caption styling
+\DeclareCaptionFont{uiblack}{\color{uiblack}}
+\DeclareCaptionFont{uipoppy}{\color{uipoppy}}
+\captionsetup{labelfont={uipoppy},textfont=uiblack}
+
+% see the macros.tex file for definitions
+\include{macros}
+
+% title slide definition
+\title{A Survey of Elements in Whoville}
+\author{Professor Seuss}
+\institute[The Institute of Advanced Study]
+{
+Department of Chemistry \\
+Whoville College \\
+}
+
+\date{\today}
+
+%--------------------------------------------------------------------
+%                           Introduction
+%--------------------------------------------------------------------
+
+\begin{document}
+
+\section{Introduction}
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{frontpage_bg}}
+\setbeamertemplate{footline}[default]
+
+\begin{frame}
+\vspace{2cm}
+\begin{columns}
+\column{2.75in}
+  \titlepage
+  \vspace{10cm}
+\column{2.0in}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------------------------
+%                          Section 1
+%-------------------------------------------------------------------
+%
+% Set the background for the rest of the slides.
+% Insert infoline
+\setbeamertemplate{background}
+ {\includegraphics[width=\paperwidth,height=\paperheight]{slide_bg}}
+\setbeamertemplate{footline}[bunsentheme]
+
+\section{Preliminary findings}
+\begin{frame}
+    \frametitle{Elements in Whoville}
+
+    \vspace{1cm} % generate some space between title and content
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{lcccc} \bottomrule[2pt]
+        Name & Symbol & $A_r$ & M.P. (K) & IE (J) \\ \bottomrule 
+        Helium & He & $4.00$ & $1$ & $3.94e^{-18}$ \\
+        Carbon & C & $12.01$ & $773$ & $3.94e^{-18}$ \\
+        Arsenic & As & $74.92$ & $1090$ & $1.48e^{-18}$ \\
+        Gold & Au & $196.96$ & $1337$ & $1.48e^{-18}$ \\
+        Cobalt & Co & $58.93$ & $1495$ & $1.26e^{-18}$ \\
+    \bottomrule[2pt]
+    \end{tabular}
+    \caption{Properties of Whoville Elements}
+    \end{table}
+
+\vspace{-0.6cm} % compact spacing between table and text
+
+    \begin{columns}[t]
+    \column{4.5cm}
+    \begin{block}{Trace rare earth metals:}
+    \begin{itemize}
+        \item{Ytterbium}
+        \item{Praseodymium}
+        \item{Neodymium}
+    \end{itemize}
+    \end{block}
+    \column{4.5cm}
+    \begin{block}{Obtaining Neodymium:}
+        \vspace{0.15cm}
+        \circled{1}$\textemdash$bastn\"{a}site \\
+        \circled{2}$\textemdash${monazite} \\
+    \end{block}
+    \end{columns}
+
+    \textref{Dr. Seuss et al. 2011}
+
+\end{frame}
+
+\end{document}
